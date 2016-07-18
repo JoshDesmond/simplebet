@@ -13,6 +13,13 @@ public class FoldTest {
 	public void setUp() throws Exception {
 	}
 
+	/**
+	 * Generates a new GameStateData using 10 chips, 1 chip small blind, and
+	 * dealing the first hand, where player one is up to bet first having the
+	 * small blind.
+	 * 
+	 * @return new GamestateData object.
+	 */
 	private static GameStateData getNewGameState() {
 		GameStateData d = new GameStateData(10, 1);
 		d.dealNextHand();

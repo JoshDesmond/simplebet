@@ -23,7 +23,6 @@ public class Raise extends BettingAction {
 
 	@Override
 	protected void apply(GameStateData gameState) {
-		// TODO Auto-generated method stub
 		if (!isValid(gameState)) {
 			throw new IllegalArgumentException("Given move was invalid");
 		}
@@ -42,6 +41,7 @@ public class Raise extends BettingAction {
 
 	@Override
 	protected boolean isValid(GameStateData gameState) {
+		if (gameState == null) throw new IllegalArgumentException();
 		if (!gameState.isInActionableState()) {
 			return false;
 		}
@@ -76,6 +76,7 @@ public class Raise extends BettingAction {
 	 * @return The maximum number of chips the acting player can bet.
 	 */
 	public static int getMaximumBetAmount(GameStateData gameState) {
+		if (gameState == null) throw new IllegalArgumentException();
 		if (!gameState.isInActionableState()) {
 			throw new IllegalArgumentException("Neither player has the action");
 		}
@@ -101,6 +102,7 @@ public class Raise extends BettingAction {
 	}
 
 	public static int getMinimumBetAmount(GameStateData gameState) {
+		if (gameState == null) throw new IllegalArgumentException();
 		if (!gameState.isInActionableState()) {
 			throw new IllegalArgumentException("Neither player has the action");
 		}
@@ -130,6 +132,7 @@ public class Raise extends BettingAction {
 	 * @return True if the raise is actually a call.
 	 */
 	public boolean isCall(GameStateData gameState) {
+		if (gameState == null) throw new IllegalArgumentException();
 		if (amount != getMinimumBetAmount(gameState)) {
 			return false;
 		}

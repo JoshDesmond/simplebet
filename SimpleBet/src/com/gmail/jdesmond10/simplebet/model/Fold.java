@@ -28,6 +28,7 @@ public class Fold extends BettingAction {
 
 	@Override
 	protected boolean isValid(GameStateData gameState) {
+		if (gameState == null) throw new IllegalArgumentException();
 		return (gameState.isInActionableState());
 	}
 
