@@ -1,4 +1,4 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 /**
  * A Card is a number between 2 and 14.

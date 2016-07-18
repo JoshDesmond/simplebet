@@ -1,4 +1,4 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 import java.util.Optional;
 
@@ -199,11 +199,40 @@ public class GameStateData {
 	}
 
 	/**
-	 * Enters the gameState to showdown phase. This is called after a call is
-	 * made.
+	 * Enters the gameState to showdown phase. This is called after a call or a
+	 * check is made.
 	 */
-	protected void showDown() {
+	protected void showdown() {
 		this.state = State.Showdown;
+	}
+
+	protected void resolveShowdown() {
+		if (this.state != State.Showdown) {
+			throw new IllegalArgumentException(
+					"Can't resolve showdown - gamestate is in " + this.state);
+		}
+
+		Player bestHand;
+		int handDifference = playerTwoCard.get().compareTo(playerOneCard.get());
+
+		// Determine which player has the better card, or if there was a tie.
+		bestHand = Player.One;
+		if (handDifference == 0) {
+			// resolve a tie.
+			playerOneCard = Optional.empty();
+			playerTwoCard = Optional.empty();
+			assert playerOneBet == playerTwoBet;
+			playerOneStack += playerOneBet;
+			playerTwoStack += playerTwoBet;
+			playerOneBet = 0;
+			playerTwoBet = 0;
+			state = State.HandEnd;
+			return;
+		} else if (handDifference > 0) {
+			bestHand = Player.Two;
+		}
+		
+		endHand(bestHand);
 	}
 
 	/**

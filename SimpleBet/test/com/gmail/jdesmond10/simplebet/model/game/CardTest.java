@@ -1,8 +1,10 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import com.gmail.jdesmond10.simplebet.model.game.Card;
 
 public class CardTest {
 

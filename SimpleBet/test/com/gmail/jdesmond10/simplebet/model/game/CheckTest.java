@@ -1,10 +1,14 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.gmail.jdesmond10.simplebet.model.GameStateData.State;
+import com.gmail.jdesmond10.simplebet.model.game.Check;
+import com.gmail.jdesmond10.simplebet.model.game.Fold;
+import com.gmail.jdesmond10.simplebet.model.game.GameStateData;
+import com.gmail.jdesmond10.simplebet.model.game.Raise;
+import com.gmail.jdesmond10.simplebet.model.game.GameStateData.State;
 
 public class CheckTest {
 

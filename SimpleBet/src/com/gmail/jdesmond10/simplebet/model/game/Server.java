@@ -1,4 +1,4 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 /**
  * The server acts as the intermediate between the clients and the GameStateData. 

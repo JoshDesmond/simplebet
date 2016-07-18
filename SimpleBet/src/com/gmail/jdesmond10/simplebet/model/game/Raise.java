@@ -1,6 +1,6 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
-import com.gmail.jdesmond10.simplebet.model.GameStateData.Player;
+import com.gmail.jdesmond10.simplebet.model.game.GameStateData.Player;
 
 public class Raise extends BettingAction {
 
@@ -35,7 +35,7 @@ public class Raise extends BettingAction {
 	
 		// If it is a call, end the hand.
 		if (isCall) {
-			gameState.showDown();
+			gameState.showdown();
 		}
 	}
 

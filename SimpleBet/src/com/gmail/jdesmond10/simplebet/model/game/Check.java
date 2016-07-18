@@ -1,4 +1,4 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 public class Check extends BettingAction {
 
@@ -8,7 +8,7 @@ public class Check extends BettingAction {
 			throw new IllegalArgumentException("Given move was invalid");
 		}
 
-		gameState.showDown();
+		gameState.showdown();
 	}
 
 	@Override

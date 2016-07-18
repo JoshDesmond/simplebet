@@ -1,4 +1,4 @@
-package com.gmail.jdesmond10.simplebet.model;
+package com.gmail.jdesmond10.simplebet.model.game;
 
 /**
  * A betting action can be one of three types. A Fold, a Check, or a Raise
