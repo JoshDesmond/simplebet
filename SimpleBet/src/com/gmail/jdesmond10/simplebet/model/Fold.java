@@ -14,14 +14,16 @@ public class Fold extends BettingAction {
 
 	@Override
 	protected void apply(GameStateData gameState) {
-		assert isValid(gameState);
+		if (!isValid(gameState)) {
+			throw new IllegalArgumentException("Given move was invalid");
+		}
 
 		// First find which player is acting
 		Player player = gameState.getPlayerToBet();
 		assert player != null; // Shouldn't happen because of above check.
 
 		// Then apply the fold from their perspective.
-		gameState.endHand(player);
+		gameState.endHand(player.getOther());
 	}
 
 	@Override
