@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.gmail.jdesmond10.simplebet.model.GameStateData.State;
+
 public class CheckTest {
 
 	/**
@@ -21,7 +23,11 @@ public class CheckTest {
 
 	@Test
 	public void testApply() {
-		fail("Not yet implemented");
+		GameStateData d = getNewGameState();
+		new Raise(1).apply(d);
+		
+		new Check().apply(d);
+		assertTrue(d.state == State.Showdown);
 	}
 
 	@Test

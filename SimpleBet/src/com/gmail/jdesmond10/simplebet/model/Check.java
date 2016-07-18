@@ -8,6 +8,7 @@ public class Check extends BettingAction {
 			throw new IllegalArgumentException("Given move was invalid");
 		}
 
+		gameState.showDown();
 	}
 
 	@Override
